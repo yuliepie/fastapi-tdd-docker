@@ -17,3 +17,10 @@ $ docker-compose exec db psql --username=hello_fastapi --dbname=hello_fastapi_de
 - connect to db: `\c hello_fastapi_dev`
 - show tables: `\dt`
 - quit: `\q`
+
+## Tests
+- monkeypatching is used to mock out behaviours of dependencies, such as database queries
+- Define the module and function name to mock out:
+```python
+monkeypatch.setattr(crud, "get", mock_get)
+```
